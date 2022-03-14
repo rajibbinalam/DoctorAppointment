@@ -57,13 +57,13 @@ class AppointmentController extends Controller
 
     public function SessionDestroy(Request $request)
     {
-        if ($request->session()->has('data')) {
-            return $request->session()->get('data');
-        } else {
-            return "No Data";
-        }
-        // $request->session()->forget('data');
-        // return redirect()->route('appointment.index');
+        // if ($request->session()->has('data')) {
+        //     return $request->session()->get('data');
+        // } else {
+        //     return "No Data";
+        // }
+        $request->session()->forget('data');
+        return redirect()->route('appointment.index');
     }
 
 
